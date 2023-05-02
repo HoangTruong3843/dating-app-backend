@@ -47,12 +47,8 @@ app.post('/dating/cards', (req, res) => {
     })
 })
 app.get('/dating/cards', (req, res) => {
-    Cards.find().then((err, data) => {
-        if (err) {
-            res.status(500).send(err)
-        } else {
-            res.status(200).send(data)
-        }
+    Cards.find().then((data) => {
+        res.status(200).send(data)
     })
 })
 
